@@ -4,6 +4,9 @@ The first project of [The Great Code Club](http://www.greatcodeclub.com/).
 
 ![ZOMGBBQ!! Pong!](https://raw2.github.com/codedinc/pong/master/preview.png)
 
+## Kenn's Notes
+* Start with the game loop
+
 ### Setting up your dev environment
 
 You can open `game.html` directly in your browser using the `file://` protocol. However, I recommend you use a real web server. If you have python installed:

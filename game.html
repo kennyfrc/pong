@@ -6,10 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <!-- You can draw the game here. By default, this is white.
+  You need tabindex set to 1 because this sets focus to the canvas. Therefore,
+  you can catch the keystrokes here
+  -->
   <canvas tabindex="1" width="640" height="480"></canvas>
 
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <!-- gamejs is the game engine-->
   <script src="game.js"></script>
+  <!-- entity is the base class -->
   <script src="entity.js"></script>
   <script src="ball.js"></script>
   <script src="paddles.js"></script>

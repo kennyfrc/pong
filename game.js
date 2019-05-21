@@ -1,7 +1,13 @@
+// game constructor
 function Game(canvas) {
   var self = this
 
+  // you draw on a canvas by getting the context
+  // 2d here. there's also webgl
+  // The HTMLCanvasElement.getContext() method returns a drawing context 
+  // on the canvas, or null if the context identifier is not supported.
   this.context = canvas.getContext("2d")
+  // save the dimensions
   this.width = canvas.width
   this.height = canvas.height
 
@@ -19,9 +25,12 @@ function Game(canvas) {
       // eg.: `self.keyPressed.up = true` on keydown
       // Will be set to `false` on keyup
       self.keyPressed[keyName] = e.type === 'keydown'
+      // if the event isn't explictly handled,
+      // its default action should not be taken as it normally would be.
+      // meaning, it won't resolve to true
       e.preventDefault()
     }
-  })
+  })  
 }
 
 // Some key code to key name mappings
@@ -82,7 +91,7 @@ Game.prototype.start = function() {
 
 // Instead of relying on a timer, we use a special browser function called
 // `requestAnimationFrame(callback)`. It calls the `callback` at interval 
-// synced with the display refresh rate.
+// synced with the display refresh rate. This is in lieu of setInterval
 // More info at:
 // https://developer.mozilla.org/en/docs/Web/API/window.requestAnimationFrame
 var onFrame = function(callback) {
