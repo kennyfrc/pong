@@ -42,6 +42,7 @@ Game.keys = {
   40: 'down'
 }
 
+// update the game
 Game.prototype.update = function() {
   this.entities.forEach(function(entity) {
     if (entity.update) entity.update()
@@ -111,13 +112,23 @@ var onFrame = function(callback) {
 }
 
 // With fixed time steps, each update is done at a fixed interval.
+/* 
+the basic implementaiton of the game loop is as follows:
+  setInterval(function(){
+    self.update()
+    self.draw()
+  }, interval)
+*/
 Game.prototype.fixedTimeStep = function() {
+  // we know on which interval to draw using FPS
   var fps = 60,
+      // interval at which to update the entities inside the game
       interval = 1000 / fps,
       updated = false
 
   // While we're not up to date ...
   while (this.lastUpdateTime < new Date().getTime()) {
+    // update all the game entities
     this.update()
     updated = true
     // We jump at fixed intervals until we catch up to the current time.
@@ -125,6 +136,7 @@ Game.prototype.fixedTimeStep = function() {
   }
 
   // No need to draw if nothing was updated
+  // We draw all the entities at a given interval
   if (updated) this.draw()
   updated = false
 }

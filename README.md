@@ -1,11 +1,7 @@
 # Pong: an HTML5 Canvas 2D Game
 
-The first project of [The Great Code Club](http://www.greatcodeclub.com/).
-
-![ZOMGBBQ!! Pong!](https://raw2.github.com/codedinc/pong/master/preview.png)
-
-## Kenn's Notes
-* Start with the game loop
+## Kenn's Notes (Reading Guide)
+* Start with Game.prototype.start. This sets the game loop and at which interval to update the entities.
 
 ### Setting up your dev environment
 
