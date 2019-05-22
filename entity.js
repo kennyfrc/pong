@@ -33,6 +33,8 @@ Entity.prototype.draw = function(context) {
 
 // Basic bounding box collision detection.
 // Returns `true` if the entity intersect with another one.
+// In our case, we detect whether or not the ball collides with a player
+// or a bot
 Entity.prototype.intersect = function(other) {
   return this.y + this.height > other.y &&
          this.y               < other.y + other.height &&

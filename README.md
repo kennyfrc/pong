@@ -2,6 +2,9 @@
 
 ## Kenn's Notes (Reading Guide)
 * Start with Game.prototype.start. This sets the game loop and at which interval to update the entities.
+* For a certain interval, update the game entities & then draw them
+* pong.js is dedicated just to initialize the canvas and entities
+* entity.js - base class for all entities. it contains X and Y coordinates and velocity and dimensions
 
 ### Setting up your dev environment
 
