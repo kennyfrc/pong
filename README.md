@@ -17,6 +17,8 @@
 * add a x-axis movement for the ball
 * reset the ball if it goes offscreen
 * randomize the launch of the ball upon reset
+* draw score
+* update game loop to use either fixed time step or variable time step for updating
 
 ### Setting up your dev environment
 

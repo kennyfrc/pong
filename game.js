@@ -101,7 +101,16 @@ Game.prototype.start = function() {
 // More info at:
 // https://developer.mozilla.org/en/docs/Web/API/window.requestAnimationFrame
 var onFrame = function(callback) {
+  // if the browser supports it, run requestAnimationFrame
   if (window.requestAnimationFrame) {
+    // invoke the fixed or variable time step which updates the game
+    // This will request that your animation function be called before 
+    // the browser performs the next repaint.
+    // The number of CALLBACKS is usually 60x per second, but this
+    // will generally match the display refresh rate in most web
+    // browsers 
+    // IT INVOKES A CALLBACK 
+    // -> The function to call when it's time to update your animation for the next repaint. 
     requestAnimationFrame(function() {
       callback()
       // requestAnimationFrame only calls our callback once, we need to
@@ -122,7 +131,7 @@ the basic implementaiton of the game loop is as follows:
   setInterval(function(){
     self.update()
     self.draw()
-  }, interval)
+  }, 1000 / fps)
 */
 Game.prototype.fixedTimeStep = function() {
   // we know on which interval to draw using FPS
@@ -131,7 +140,8 @@ Game.prototype.fixedTimeStep = function() {
       interval = 1000 / fps,
       updated = false
 
-  // While we're not up to date ...
+  // While we're not up to date, keep loading an update until
+  // it matches with the current date and time
   while (this.lastUpdateTime < new Date().getTime()) {
     // update all the game entities
     this.update()
