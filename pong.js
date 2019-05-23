@@ -1,5 +1,9 @@
+// make an instance of the Game class
+// start the game loop
+
 function Background() {}
 
+// draws the game
 Background.prototype.draw = function(context) {
   context.fillStyle = '#000'
   context.fillRect(0, 0, game.width, game.height)
@@ -14,9 +18,11 @@ Background.prototype.draw = function(context) {
 
 // Initialize and start the game
 
+// get the canvas that you've initilialized on the page
 var game = new Game($('canvas')[0])
 
 // Load the game entities
+// create background and all every 60th of a second
 game.entities = [
   new Background(),
   game.ball = new Ball(),

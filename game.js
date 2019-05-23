@@ -14,7 +14,7 @@ function Game(canvas) {
   // Keep track of key states
   // Eg.:
   //   game.keyPressed.up === true  // while UP key is pressed)
-  //   game.keyPressed.up === false // when UP key is released)
+  //   game.keyPressed.up === false // when UP   key is released)
   this.keyPressed = {}
 
   $(canvas).on('keydown keyup', function(e) {
@@ -42,17 +42,22 @@ Game.keys = {
   40: 'down'
 }
 
-// update the game
+// update all the entities in the game
 Game.prototype.update = function() {
   this.entities.forEach(function(entity) {
+    // if the entity has an update function
+    // not all entities have an update (e.g. background)
+    // the entity updates its position & velocity every 60th of a second
     if (entity.update) entity.update()
   })
 }
 
+// Draw the entities
 Game.prototype.draw = function() {
   var self = this
 
   this.entities.forEach(function(entity) {
+    // context is an attribute
     if (entity.draw) entity.draw(self.context)
   })
 }
