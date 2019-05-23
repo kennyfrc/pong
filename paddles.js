@@ -56,6 +56,8 @@ function Bot() {
 Bot.prototype = Object.create(Paddle.prototype)
 Bot.prototype.constructor = Bot
 
+// This is basically looking at the ball and just
+// following it
 Bot.prototype.update = function() {
   // Follow the ball
   if (this.y < game.ball.y) {

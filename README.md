@@ -5,6 +5,18 @@
 * For a certain interval, update the game entities & then draw them
 * pong.js is dedicated just to initialize the canvas and entities
 * entity.js - base class for all entities. it contains X and Y coordinates and velocity and dimensions
+* create the background first
+* create the ball
+* create some basic velocity for the ball then check
+* make the ball bounce (by adding boundaries & collission)
+* create basic paddle
+* apply a speed to the velocity of the paddle (which then updates the x, y coordinates)
+* create boundaries for the paddle (by setting the position only via Math.min and Math.max)
+* create the bot's paddle
+* use extremely simple AI logic first (e.g. follow the ball)
+* add a x-axis movement for the ball
+* reset the ball if it goes offscreen
+* randomize the launch of the ball upon reset
 
 ### Setting up your dev environment
 

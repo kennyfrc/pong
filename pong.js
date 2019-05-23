@@ -23,6 +23,8 @@ var game = new Game($('canvas')[0])
 
 // Load the game entities
 // create background and all every 60th of a second
+// by addding game.ball, etc, he's just adding references
+// to the Ball, Player, and Bot Objects
 game.entities = [
   new Background(),
   game.ball = new Ball(),
