@@ -62,14 +62,17 @@ Ball.prototype.update = function() {
     var hitter = game.bot
   }
 
-  // Hits a paddle.
+  // Hits a paddle
+  // hitter = player or bot depending on the intersection
+  // 
   if (hitter) {
     this.xVelocity *= -1.1 // Rebound and increase speed
     this.yVelocity *= 1.1
 
     // Transfer some of the paddle vertical velocity to the ball
+    // adding spin by moving your paddle as you hit it
     this.yVelocity += hitter.yVelocity / 4
-
+    // play audio
     this.blip.play()
   }
 
@@ -78,6 +81,8 @@ Ball.prototype.update = function() {
   if (this.y < 0 || this.y + this.height > game.height) {
     // flip the velocity
     this.yVelocity *= -1 // rebound, switch direction
+
+    // play audio
     this.blip.play()
   }
 
